@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "serve": "node build/server.js"
+  },
+  "name": "collision-detection",
+  "module": "index.ts",
+  "type": "module"
+}
