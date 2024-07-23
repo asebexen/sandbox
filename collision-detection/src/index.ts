@@ -57,7 +57,7 @@ class RenderObject {
     this.dimensions.y = val;
   }
   //#endregion
-
+  
   doesCollide(other: RenderObject) {
     return (
       this.x < other.x + other.width &&
