@@ -228,7 +228,7 @@ var COMMANDS = map[string]func(){
 }
 
 func getValidCommands() string {
-	commandsArray := make([]string, len(COMMANDS))
+	var commandsArray []string
 	for key := range COMMANDS {
 		commandsArray = append(commandsArray, key)
 	}
