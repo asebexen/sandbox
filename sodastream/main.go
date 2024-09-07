@@ -200,11 +200,11 @@ func cmdRemove() {
 	fmt.Printf("Bottle removed. You've now made %d total.\n", decrementCount(file))
 }
 
-func cmdInfo() {
+func cmdCalc() {
 	file := openOrCreateFile()
 	defer file.Close()
 	data := readData(file)
-	fmt.Printf("Bottles: %d\nCost per cylinder: $%.2f\nmL per bottle: %d\n-----\nCurrent cost per L:\n$%.2f\n", data.count, data.cost, data.ml, data.cost/float64(data.count)*float64(data.ml)/1000)
+	fmt.Printf("Bottles: %d\nCost per cylinder: $%.2f\nmL per bottle: %d\n-----\nCurrent cost per L:\n$%.2f\n", data.count, data.cost, data.ml, data.cost*float64(data.count)/float64(data.ml)*1000)
 }
 
 func cmdConfig() {
@@ -223,7 +223,7 @@ var COMMANDS = map[string]func(){
 	"count":  cmdCount,
 	"add":    cmdAdd,
 	"remove": cmdRemove,
-	"info":   cmdInfo,
+	"calc":   cmdCalc,
 	"config": cmdConfig,
 }
 
