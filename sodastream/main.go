@@ -204,7 +204,7 @@ func cmdCalc() {
 	file := openOrCreateFile()
 	defer file.Close()
 	data := readData(file)
-	fmt.Printf("Bottles: %d\nCost per cylinder: $%.2f\nmL per bottle: %d\n-----\nCurrent cost per L:\n$%.2f\n", data.count, data.cost, data.ml, data.cost*float64(data.count)/float64(data.ml)*1000)
+	fmt.Printf("Bottles: %d\nCost per cylinder: $%.2f\nmL per bottle: %d\n-----\nCurrent cost per L:\n$%.2f\n", data.count, data.cost, data.ml, data.cost/float64(data.count)/float64(data.ml)*1000)
 }
 
 func cmdConfig() {
